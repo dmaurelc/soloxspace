@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Droplet, Iron } from 'lucide-react';
+import { Droplet, CircleDot } from 'lucide-react';
 
 const AboutSection = () => {
   const { ref, inView } = useInView({
@@ -48,7 +48,7 @@ const AboutSection = () => {
                 </p>
               </li>
               <li className="flex items-start gap-3">
-                <Iron className="text-solox-blue mt-1 flex-shrink-0" />
+                <CircleDot className="text-solox-blue mt-1 flex-shrink-0" />
                 <p className="text-gray-300 text-lg leading-relaxed font-inter">
                   <span className="font-semibold">Iron and Aluminum:</span> Key materials for building infrastructure and supporting In-Situ Resource Utilization (ISRU).
                 </p>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { useInView } from 'react-intersection-observer';
-import { Copper, Cobalt } from 'lucide-react';
+import { CircleDot, Diamond } from 'lucide-react';
 
 const MineralsSection = () => {
   const { ref: sectionRef, inView: sectionVisible } = useInView({
@@ -50,7 +50,7 @@ const MineralsSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end">
                 <div className="px-6 py-4 flex items-center gap-3">
-                  <Copper className="text-solox-blue" />
+                  <Diamond className="text-solox-blue" />
                   <h3 className="text-solox-blue font-semibold text-2xl">COPPER</h3>
                 </div>
               </div>
@@ -76,7 +76,7 @@ const MineralsSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end">
                 <div className="px-6 py-4 flex items-center gap-3">
-                  <Cobalt className="text-solox-blue" />
+                  <CircleDot className="text-solox-blue" />
                   <h3 className="text-solox-blue font-semibold text-2xl">COBALT</h3>
                 </div>
               </div>

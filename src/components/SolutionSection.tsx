@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Droplet, Iron } from 'lucide-react';
+import { Droplet, CircleDot } from 'lucide-react';
 
 const SolutionSection = () => {
   const { ref, inView } = useInView({
@@ -40,7 +40,7 @@ const SolutionSection = () => {
               
               <div className="glass-card p-6 hover:border-solox-blue transition-colors">
                 <div className="flex items-start gap-4">
-                  <Iron size={24} className="text-solox-blue mt-1" />
+                  <CircleDot size={24} className="text-solox-blue mt-1" />
                   <div>
                     <h4 className="text-xl font-semibold text-white mb-2">Iron and Aluminum</h4>
                     <p className="text-gray-300 leading-relaxed">
