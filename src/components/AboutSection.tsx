@@ -34,7 +34,6 @@ const AboutSection = () => {
                 alt="Solox Space Mining" 
                 className="rounded-lg w-full h-auto object-cover shadow-xl shadow-solox-blue/10 hover-scale"
               />
-              <div className="absolute -bottom-5 -right-5 h-24 w-24 bg-solox-blue rounded-full flex items-center justify-center text-black font-audiowide text-xl opacity-90">2023</div>
             </div>
           </div>
           
