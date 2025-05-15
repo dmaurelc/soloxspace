@@ -14,6 +14,11 @@ const MineralsSection = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+  
+  const { ref: detailsRef, inView: detailsVisible } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <section id="minerals" className="py-24 bg-earth-pattern bg-fixed bg-cover bg-center relative">
@@ -116,6 +121,62 @@ const MineralsSection = () => {
             <a href="#contact" className="solox-button">
               CONTACT US
             </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* New Minerals Details Section */}
+      <div className="container mx-auto px-4 mt-32 relative z-10" ref={detailsRef}>
+        <div className="space-y-32">
+          {/* Copper */}
+          <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 transition-all duration-1000 delay-100 ${detailsVisible ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
+            <div className="w-full md:w-1/2">
+              <img 
+                src="https://www.soloxspace.com/imagenes/remo.png" 
+                alt="Copper applications in renewable energy" 
+                className="w-full h-auto rounded-xl shadow-xl"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-solox-blue font-audiowide text-3xl mb-6">Copper</h3>
+              <p className="text-gray-300 text-lg">
+                Copper's unparalleled electrical conductivity and recyclability make it indispensable in the global shift to sustainable energy solutions. It is essential for the deployment of renewable energy, electric vehicles, and energy-efficient infrastructure. As global efforts to decarbonize intensify, the demand for Copper will only continue to rise, solidifying its role in the future of clean energy and electrification.
+              </p>
+            </div>
+          </div>
+          
+          {/* Cobalt */}
+          <div className={`flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 transition-all duration-1000 delay-300 ${detailsVisible ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
+            <div className="w-full md:w-1/2">
+              <img 
+                src="https://www.soloxspace.com/imagenes/carro.jpg" 
+                alt="Cobalt applications in electric vehicles" 
+                className="w-full h-auto rounded-xl shadow-xl"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-solox-blue font-audiowide text-3xl mb-6">Cobalt</h3>
+              <p className="text-gray-300 text-lg">
+                Cobalt's role in batteries, especially for electric vehicles and renewable energy storage, makes it indispensable for the shift to greener energy solutions. The demand for Cobalt is growing rapidly as industries and governments around the world move towards reducing carbon emissions. Additionally, cobalt's use in technologies that improve energy efficiency and sustainability aligns with global efforts to combat climate change.
+              </p>
+            </div>
+          </div>
+          
+          {/* Molybdenum */}
+          <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 transition-all duration-1000 delay-500 ${detailsVisible ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
+            <div className="w-full md:w-1/2">
+              <img 
+                src="https://www.soloxspace.com/imagenes/molibdeno.png" 
+                alt="Molybdenum applications in energy infrastructure" 
+                className="w-full h-auto rounded-xl shadow-xl"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-solox-blue font-audiowide text-3xl mb-6">Molybdenum</h3>
+              <p className="text-gray-300 text-lg">
+                Molybdenum plays a crucial role in the Energy Transition due to its properties as a heat-resistant metal and its use in green technologies. It enhances the durability and efficiency of renewable energy infrastructure, such as wind turbines, solar panels, and hydrogen production systems. Molybdenum alloys are essential in nuclear power and advanced energy storage systems, improving the lifespan of batteries and fuel cells. Its role in producing high-strength steel for electric vehicles and other sustainable applications also makes it vital for transitioning to a low-carbon future.
+              </p>
+            </div>
           </div>
         </div>
       </div>

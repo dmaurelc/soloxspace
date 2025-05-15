@@ -13,10 +13,20 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black py-12 relative">
+    <footer className="relative py-12 bg-black">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://www.soloxspace.com/imagenes/planets1.jpg" 
+          alt="Space background with planets" 
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-black/70"></div>
+      </div>
+      
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent"></div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center mb-8">
           <button 
             onClick={scrollToTop} 
