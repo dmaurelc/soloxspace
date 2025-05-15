@@ -65,11 +65,6 @@ const AboutSection = () => {
               Our Remote Exploration Technology reduce the environmental and financial costs of resource identification, accelerating discovery timelines and enabling efficient access to essential materials. By bridging the gap between terrestrial mining and Space exploration, SOLOX SPACE MINING contributes to building a sustainable future on Earth and beyond.
             </p>
             
-            <div className="pt-4">
-              <a href="#solution" className="solox-button">
-                LEARN MORE
-              </a>
-            </div>
           </div>
         </div>
       </div>
