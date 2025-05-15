@@ -24,8 +24,8 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 text-center py-20">
         <div className="flex flex-col items-center justify-center space-y-8">
           <div className={`transition-all duration-1000 delay-300 ${loaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="text-6xl md:text-8xl font-audiowide mb-2 tracking-tight">
-              <span className="text-solox-blue">SOLOX</span> <span className="text-white">SPACE</span>
+            <h1 className="flex flex-col text-6xl md:text-8xl font-audiowide mb-2 tracking-tight">
+              <span className="text-solox-blue">Solox Space</span> <span className="text-white">Mining</span>
             </h1>
           </div>
           
