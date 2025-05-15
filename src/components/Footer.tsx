@@ -67,8 +67,17 @@ const Footer = () => {
             </nav>
           </div>
           
-          <div>
+          <div className="flex flex-col items-center md:items-end space-y-2">
             <p className="text-gray-500 text-sm font-inter">&copy; {currentYear} Solox Space. All rights reserved.</p>
+            <a 
+              href="https://www.dmaurel.cl/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Diseñador Web Freelance"
+              className="text-solox-blue hover:text-solox-blue/80 text-xs font-inter transition-colors"
+            >
+              dmaurel.cl
+            </a>
           </div>
         </div>
       </div>

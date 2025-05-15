@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Mouse } from 'lucide-react';
 import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
 
 const Hero = () => {
@@ -49,7 +49,7 @@ const Hero = () => {
           <div className={`transition-all duration-1000 delay-700 ${loaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             <a href="#about" className="solox-button group" onClick={handleScrollToAbout}>
               DISCOVER MORE
-              <ChevronDown className="transition-transform group-hover:translate-y-1" />
+              <Mouse className="transition-transform group-hover:translate-y-1" />
             </a>
           </div>
         </div>
@@ -57,7 +57,7 @@ const Hero = () => {
       
       {/* Scroll indicator */}
       <div className="scroll-indicator">
-        <ChevronDown size={24} strokeWidth={2} className="text-white" />
+        <Mouse size={24} strokeWidth={2} className="text-white animate-bounce" />
       </div>
     </section>
   );
