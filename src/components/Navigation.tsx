@@ -30,7 +30,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="text-2xl font-audiowide">
-              <span className="text-solox-blue">SOLOX</span> <span className="text-white">SPACE</span>
+              <span className="text-solox-blue">Solox</span> <span className="text-white">Space</span>
             </a>
           </div>
           
