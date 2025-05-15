@@ -2,10 +2,16 @@
 import React, { useState } from 'react';
 import { Mail, Twitter, Instagram, ArrowRight } from 'lucide-react';
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useInView } from 'react-intersection-observer';
 
 const ContactSection = () => {
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
   const [submitted, setSubmitted] = useState(false);
   
   const { ref, inView } = useInView({
@@ -13,15 +19,26 @@ const ContactSection = () => {
     threshold: 0.2,
   });
   
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      // Aquí iría el código para enviar el email
-      console.log('Subscribed with:', email);
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 3000);
-      setEmail('');
-    }
+    // Here would go the code to send the contact form data
+    console.log('Contact form submitted:', formData);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      message: ''
+    });
   };
 
   return (
@@ -67,19 +84,51 @@ const ContactSection = () => {
             </div>
             
             <div>
-              <h3 className="text-2xl font-audiowide mb-6 text-solox-blue">Newsletter</h3>
-              <p className="text-gray-300 mb-8 leading-relaxed font-inter">
-                Stay updated with our latest developments, space mining insights, and industry news by subscribing to our newsletter.
-              </p>
+              <h3 className="text-2xl font-audiowide mb-6 text-solox-blue">Contact Form</h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Input
-                    type="email"
-                    placeholder="Your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="bg-black/50 border-gray-700 focus:border-solox-blue text-white font-inter"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="Your phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="bg-black/50 border-gray-700 focus:border-solox-blue text-white font-inter"
+                  />
+                </div>
+                
+                <div>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Your email address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-black/50 border-gray-700 focus:border-solox-blue text-white font-inter"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <Textarea
+                    name="message"
+                    placeholder="Your message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="bg-black/50 border-gray-700 focus:border-solox-blue text-white font-inter min-h-[120px]"
                     required
                   />
                 </div>
@@ -89,7 +138,7 @@ const ContactSection = () => {
                   className="solox-button group w-full flex justify-center items-center"
                   disabled={submitted}
                 >
-                  {submitted ? 'SUBSCRIBED!' : 'SUBSCRIBE'}
+                  {submitted ? 'MESSAGE SENT!' : 'SEND MESSAGE'}
                   {!submitted && <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={16} />}
                 </button>
               </form>

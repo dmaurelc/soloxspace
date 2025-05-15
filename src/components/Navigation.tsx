@@ -38,11 +38,14 @@ const Navigation = () => {
             <a href="#about" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
               About Us
             </a>
+            <a href="#team" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
+              Team
+            </a>
             <a href="#solution" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
               Our Solution
             </a>
-            <a href="#team" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
-              Team
+            <a href="#minerals" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
+              Minerals
             </a>
             <a href="#contact" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
               Contact
@@ -75,11 +78,14 @@ const Navigation = () => {
           <a href="#about" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
             About Us
           </a>
+          <a href="#team" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
+            Team
+          </a>
           <a href="#solution" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
             Our Solution
           </a>
-          <a href="#team" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
-            Team
+          <a href="#minerals" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
+            Minerals
           </a>
           <a href="#contact" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
             Contact
