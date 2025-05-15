@@ -25,8 +25,16 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-mars-pattern bg-fixed bg-cover bg-center relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/70 to-black"></div>
+    <section id="contact" className="py-24 bg-cover bg-center bg-fixed relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://www.soloxspace.com/imagenes/planets1.jpg" 
+          alt="Space background with planets" 
+          className="w-full h-full object-cover opacity-50"
+        />
+        <div className="absolute inset-0 bg-black/70"></div>
+      </div>
       
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
         <div className={`transition-all duration-1000 ${inView ? 'opacity-100' : 'opacity-0'}`}>
