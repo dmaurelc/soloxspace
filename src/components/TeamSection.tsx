@@ -53,10 +53,6 @@ const TeamSection = () => {
               This deep industry expertise led to the creation of SOLOX SPACE MINING, leveraging cutting-edge detection technologies to bridge terrestrial mining excellence with space exploration needs. SOLOX SPACE MINING combines advanced engineering, sustainability, and innovation to address the critical challenges of resource exploration on Earth and in Space. This dual-purpose approach enables efficient exploration and drives technological innovation in resource identification and utilization. Constanza is a Christian, and the greatest value she sees in Mining and Mineral Deposits, is being able to witness firsthand the foundations of God's creation of the Earth and Universe.
             </p>
             
-            <div className="glass-card inline-flex px-6 py-3 mt-4 items-center gap-4">
-              <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse-slow"></div>
-              <span className="text-sm text-gray-300 font-inter">Founder and CEO of Solox Space Mining</span>
-            </div>
           </div>
         </div>
       </div>
