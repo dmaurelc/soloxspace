@@ -23,12 +23,6 @@ const MineralsSection = () => {
         <div className={`transition-all duration-1000 ${sectionVisible ? 'opacity-100' : 'opacity-0'}`}>
           <h2 className="section-title">CRITICAL MINERALS</h2>
           <p className="text-gray-300 text-center max-w-3xl mx-auto mb-16 text-lg">
-            Critical Minerals and their roles in the Energy Transition and Technologies
-          </p>
-        </div>
-        
-        <div className="text-center mb-10">
-          <p className="text-xl text-gray-200 max-w-4xl mx-auto">
             Copper, Molybdenum, Cobalt, and Nickel: Critical Minerals for the energy transition and new technologies.
           </p>
         </div>
