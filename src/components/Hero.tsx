@@ -10,20 +10,16 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-space-pattern bg-cover bg-fixed bg-center bg-no-repeat flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black"></div>
-      
-      {/* Hero background video */}
-      <video 
-        autoPlay 
-        muted 
-        loop 
-        playsInline
-        className="video-bg"
-        poster="https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg"
-      >
-        <source src="https://soloxspace.com/wp-content/uploads/2022/09/SOLOX-Home-Video-2.mp4" type="video/mp4" />
-      </video>
+    <section 
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      style={{
+        backgroundImage: "url('https://www.soloxspace.com/imagenes/planets2.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black"></div>
       
       <div className="container mx-auto px-4 relative z-10 text-center py-20">
         <div className="flex flex-col items-center justify-center space-y-8">
