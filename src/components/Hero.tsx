@@ -1,13 +1,19 @@
 
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
+  const { scrollToElement } = useScrollToAnchor();
   
   useEffect(() => {
     setLoaded(true);
   }, []);
+
+  const handleScrollToAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    scrollToElement(e, 'about');
+  };
 
   return (
     <section 
@@ -41,7 +47,7 @@ const Hero = () => {
           </div>
           
           <div className={`transition-all duration-1000 delay-700 ${loaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-            <a href="#about" className="solox-button group">
+            <a href="#about" className="solox-button group" onClick={handleScrollToAbout}>
               DISCOVER MORE
               <ChevronDown className="transition-transform group-hover:translate-y-1" />
             </a>

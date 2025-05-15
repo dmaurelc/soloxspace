@@ -2,12 +2,19 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Droplet, CircleDot } from 'lucide-react';
+import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
 
 const SolutionSection = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
+
+  const { scrollToElement } = useScrollToAnchor();
+
+  const handleScrollToMinerals = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    scrollToElement(e, 'minerals');
+  };
 
   return (
     <section id="solution" className="py-24 bg-black relative overflow-hidden">
@@ -52,7 +59,7 @@ const SolutionSection = () => {
             </div>
             
             <div className="pt-8">
-              <a href="#minerals" className="solox-button">
+              <a href="#minerals" className="solox-button" onClick={handleScrollToMinerals}>
                 LEARN ABOUT EARTH MINERALS
               </a>
             </div>
