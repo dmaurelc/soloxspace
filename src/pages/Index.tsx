@@ -30,7 +30,7 @@ const Index = () => {
         }`}
       >
         <div className="text-4xl font-audiowide animate-pulse">
-          <span className="text-solox-blue">SOLOX</span> <span className="text-white">SPACE</span>
+          <span className="text-solox-blue">Solox</span> <span className="text-white">Space</span>
         </div>
       </div>
 
