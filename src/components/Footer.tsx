@@ -37,7 +37,7 @@ const Footer = () => {
           </button>
           
           <div className="text-3xl font-audiowide mb-4">
-            <span className="text-solox-blue">SOLOX</span> <span className="text-white">SPACE</span>
+            <span className="text-solox-blue">Solox</span> <span className="text-white">Space</span>
           </div>
           
           <p className="text-gray-400 max-w-xl text-center mb-8 font-inter">
