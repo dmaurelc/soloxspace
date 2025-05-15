@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				solox: {
+					blue: '#00BFFF',
+					darkblue: '#0077B6',
+					black: '#000000',
+					darkgray: '#121212',
+					white: '#FFFFFF',
 				}
 			},
 			borderRadius: {
@@ -84,12 +92,29 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out forwards'
+			},
+			backgroundImage: {
+				'hero-pattern': "url('https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg')",
+				'earth-pattern': "url('https://images.pexels.com/photos/355935/pexels-photo-355935.jpeg')",
+				'space-pattern': "url('https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg')",
+				'mars-pattern': "url('https://images.pexels.com/photos/73910/mars-mars-rover-space-travel-robot-73910.jpeg')",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
