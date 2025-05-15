@@ -91,23 +91,89 @@
 
   body {
     @apply bg-black text-white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @layer components {
   .solox-button {
-    @apply px-6 py-3 border border-solox-blue text-solox-blue hover:bg-solox-blue hover:text-black transition-all duration-300 uppercase tracking-wider font-medium;
+    @apply px-6 py-3 border-2 border-solox-blue text-solox-blue hover:bg-solox-blue hover:text-black transition-all duration-300 uppercase tracking-wider font-medium inline-flex items-center gap-2;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-10 text-center uppercase tracking-wider;
+    @apply text-3xl md:text-5xl font-bold mb-14 text-center uppercase tracking-wider relative after:content-[''] after:absolute after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-24 after:h-1 after:bg-solox-blue;
   }
   
   .section-subtitle {
     @apply text-xl md:text-2xl font-semibold mb-4 uppercase tracking-wider text-solox-blue;
   }
+  
+  .glass-card {
+    @apply bg-black/40 backdrop-blur-md border border-gray-800/50 rounded-xl transition-all duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-solox-blue to-solox-darkblue bg-clip-text text-transparent;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 animate-fade-in;
+  }
 }
 
-/* Import Roboto font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Additional animation keyframes */
+@keyframes floatingAstronaut {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: floatingAstronaut 6s ease-in-out infinite;
+}
+
+/* Video background styles */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.8;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(10px); }
+  100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+}
+
+/* Add parallax effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,31 +1,59 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Menu } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md">
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      scrolled ? 'bg-black/90 backdrop-blur-md py-2' : 'bg-transparent py-6'
+    }`}>
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="text-2xl font-bold">
               <span className="text-solox-blue">SOLOX</span> <span className="text-white">SPACE</span>
             </a>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-white hover:text-solox-blue transition-colors">About Us</a>
-            <a href="#minerals" className="text-white hover:text-solox-blue transition-colors">Critical Minerals</a>
-            <a href="#team" className="text-white hover:text-solox-blue transition-colors">Team</a>
-            <a href="#contact" className="text-white hover:text-solox-blue transition-colors">Contact Us</a>
+          <div className="hidden md:flex items-center space-x-10">
+            <a href="#about" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
+              About Us
+            </a>
+            <a href="#minerals" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
+              Critical Minerals
+            </a>
+            <a href="#team" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
+              Team
+            </a>
+            <a href="#contact" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
+              Contact
+            </a>
           </div>
           
           <div className="md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
               className="text-white hover:text-solox-blue transition-colors"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -35,11 +63,27 @@ const Navigation = () => {
       
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-black h-screen w-full absolute top-16 left-0 flex flex-col items-start p-4">
-          <a href="#about" className="text-white hover:text-solox-blue transition-colors py-4 text-xl" onClick={() => setIsOpen(false)}>About Us</a>
-          <a href="#minerals" className="text-white hover:text-solox-blue transition-colors py-4 text-xl" onClick={() => setIsOpen(false)}>Critical Minerals</a>
-          <a href="#team" className="text-white hover:text-solox-blue transition-colors py-4 text-xl" onClick={() => setIsOpen(false)}>Team</a>
-          <a href="#contact" className="text-white hover:text-solox-blue transition-colors py-4 text-xl" onClick={() => setIsOpen(false)}>Contact Us</a>
+        <div className="md:hidden bg-black/90 backdrop-blur-lg h-screen w-full fixed top-0 left-0 flex flex-col items-center justify-center space-y-10 animate-fade-in">
+          <button 
+            onClick={() => setIsOpen(false)} 
+            className="text-white hover:text-solox-blue transition-colors absolute top-6 right-6"
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+          
+          <a href="#about" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
+            About Us
+          </a>
+          <a href="#minerals" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
+            Critical Minerals
+          </a>
+          <a href="#team" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
+            Team
+          </a>
+          <a href="#contact" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
+            Contact
+          </a>
         </div>
       )}
     </nav>
