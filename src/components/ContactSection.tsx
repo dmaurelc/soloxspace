@@ -36,41 +36,31 @@ const ContactSection = () => {
         <div className={`max-w-4xl mx-auto glass-card p-8 md:p-12 mt-12 transition-all duration-1000 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-solox-blue">Get in Touch</h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Interested in learning more about our technologies or potential collaborations? Reach out to our team to discuss how Solox Space Mining can help advance your projects.
+              <h3 className="text-2xl font-audiowide mb-6 text-solox-blue">Get in Touch</h3>
+              <p className="text-gray-300 mb-8 leading-relaxed font-inter">
+                Interested in learning more about our technologies or potential collaborations? Reach out to our team to discuss how SOLOX Space can help advance your projects.
               </p>
               
               <div className="flex items-center mb-6">
                 <Mail size={20} className="text-solox-blue mr-4" />
-                <a href="mailto:info@soloxspace.com" className="text-white hover:text-solox-blue transition-colors">
+                <a href="mailto:info@soloxspace.com" className="text-white hover:text-solox-blue transition-colors font-inter">
                   info@soloxspace.com
                 </a>
               </div>
               
               <div className="flex items-center space-x-6 mb-8">
-                <a href="#" className="text-white hover:text-solox-blue transition-colors" aria-label="Instagram">
-                  <Instagram size={24} />
-                </a>
-                <a href="#" className="text-white hover:text-solox-blue transition-colors" aria-label="Twitter">
+                <a href="https://twitter.com/SoloxSpace" target="_blank" rel="noopener noreferrer" className="text-white hover:text-solox-blue transition-colors" aria-label="Twitter">
                   <Twitter size={24} />
                 </a>
-              </div>
-              
-              <div className="hidden md:block mt-12">
-                <div className="relative inline-flex items-center justify-center w-32 h-32">
-                  <div className="absolute inset-0 rounded-full border-2 border-solox-blue border-dashed animate-spin-slow"></div>
-                  <div className="text-center">
-                    <div className="text-solox-blue text-3xl font-bold">24/7</div>
-                    <div className="text-sm text-gray-400">Global Support</div>
-                  </div>
-                </div>
+                <a href="https://www.instagram.com/soloxspace/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-solox-blue transition-colors" aria-label="Instagram">
+                  <Instagram size={24} />
+                </a>
               </div>
             </div>
             
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-solox-blue">Newsletter</h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">
+              <h3 className="text-2xl font-audiowide mb-6 text-solox-blue">Newsletter</h3>
+              <p className="text-gray-300 mb-8 leading-relaxed font-inter">
                 Stay updated with our latest developments, space mining insights, and industry news by subscribing to our newsletter.
               </p>
               
@@ -81,7 +71,7 @@ const ContactSection = () => {
                     placeholder="Your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-black/50 border-gray-700 focus:border-solox-blue text-white"
+                    className="bg-black/50 border-gray-700 focus:border-solox-blue text-white font-inter"
                     required
                   />
                 </div>
@@ -95,15 +85,6 @@ const ContactSection = () => {
                   {!submitted && <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={16} />}
                 </button>
               </form>
-              
-              <div className="mt-8 p-4 bg-black/30 border border-gray-700 rounded-md">
-                <h4 className="text-white font-semibold mb-2">Our Location</h4>
-                <p className="text-gray-400">
-                  SOLOX Space Mining HQ<br />
-                  1250 Innovation Drive<br />
-                  Houston, TX 77058
-                </p>
-              </div>
             </div>
           </div>
         </div>

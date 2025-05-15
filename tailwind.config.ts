@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				audiowide: ['Audiowide', 'cursive'],
+				inter: ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -130,10 +134,10 @@ export default {
 				'slide-in-right': 'slide-in-right 0.5s ease-out'
 			},
 			backgroundImage: {
-				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/39896/space-station-moon-landing-apollo-15-james-irwin-39896.jpeg')",
-				'earth-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/87611/sun-fireball-solar-flare-sunlight-87611.jpeg')",
-				'space-pattern': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg')",
-				'mars-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/39896/space-station-moon-landing-apollo-15-james-irwin-39896.jpeg')",
+				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
+				'earth-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
+				'space-pattern': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
+				'mars-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},

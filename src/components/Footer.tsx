@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronUp, Github, Linkedin, Twitter } from 'lucide-react';
+import { ChevronUp, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,23 +26,23 @@ const Footer = () => {
             <ChevronUp size={24} />
           </button>
           
-          <div className="text-3xl font-bold mb-4">
+          <div className="text-3xl font-audiowide mb-4">
             <span className="text-solox-blue">SOLOX</span> <span className="text-white">SPACE</span>
           </div>
           
-          <p className="text-gray-400 max-w-xl text-center mb-8">
-            Pioneering the future of space resource utilization with cutting-edge remote sensing technology for critical mineral discovery.
+          <p className="text-gray-400 max-w-xl text-center mb-8 font-inter">
+            Remote sensing technologies to discover critical minerals on Earth and resources on the Moon and Mars.
           </p>
           
           <div className="flex space-x-6 mb-12">
-            <a href="#" className="text-gray-400 hover:text-solox-blue transition-colors" aria-label="Twitter">
+            <a href="https://twitter.com/SoloxSpace" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-solox-blue transition-colors" aria-label="Twitter">
               <Twitter size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-solox-blue transition-colors" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/solox-space" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-solox-blue transition-colors" aria-label="LinkedIn">
               <Linkedin size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-solox-blue transition-colors" aria-label="GitHub">
-              <Github size={20} />
+            <a href="https://www.instagram.com/soloxspace/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-solox-blue transition-colors" aria-label="Instagram">
+              <Instagram size={20} />
             </a>
           </div>
         </div>
@@ -50,15 +50,15 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-8">
           <div className="mb-4 md:mb-0">
             <nav className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4">
-              <a href="#about" className="text-gray-400 hover:text-solox-blue transition-colors text-sm">About</a>
-              <a href="#minerals" className="text-gray-400 hover:text-solox-blue transition-colors text-sm">Minerals</a>
-              <a href="#team" className="text-gray-400 hover:text-solox-blue transition-colors text-sm">Team</a>
-              <a href="#contact" className="text-gray-400 hover:text-solox-blue transition-colors text-sm">Contact</a>
+              <a href="#about" className="text-gray-400 hover:text-solox-blue transition-colors text-sm font-inter">About</a>
+              <a href="#solution" className="text-gray-400 hover:text-solox-blue transition-colors text-sm font-inter">Solution</a>
+              <a href="#team" className="text-gray-400 hover:text-solox-blue transition-colors text-sm font-inter">Team</a>
+              <a href="#contact" className="text-gray-400 hover:text-solox-blue transition-colors text-sm font-inter">Contact</a>
             </nav>
           </div>
           
           <div>
-            <p className="text-gray-500 text-sm">&copy; {currentYear} Solox Space Mining. All rights reserved.</p>
+            <p className="text-gray-500 text-sm font-inter">&copy; {currentYear} Solox Space. All rights reserved.</p>
           </div>
         </div>
       </div>

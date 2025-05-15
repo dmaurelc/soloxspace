@@ -29,22 +29,22 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold">
+            <a href="#" className="text-2xl font-audiowide">
               <span className="text-solox-blue">SOLOX</span> <span className="text-white">SPACE</span>
             </a>
           </div>
           
           <div className="hidden md:flex items-center space-x-10">
-            <a href="#about" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
+            <a href="#about" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
               About Us
             </a>
-            <a href="#minerals" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
-              Critical Minerals
+            <a href="#solution" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
+              Our Solution
             </a>
-            <a href="#team" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
+            <a href="#team" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
               Team
             </a>
-            <a href="#contact" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors">
+            <a href="#contact" className="text-white opacity-80 hover:opacity-100 hover:text-solox-blue transition-colors font-inter">
               Contact
             </a>
           </div>
@@ -72,16 +72,16 @@ const Navigation = () => {
             <X size={24} />
           </button>
           
-          <a href="#about" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
+          <a href="#about" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
             About Us
           </a>
-          <a href="#minerals" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
-            Critical Minerals
+          <a href="#solution" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
+            Our Solution
           </a>
-          <a href="#team" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
+          <a href="#team" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
             Team
           </a>
-          <a href="#contact" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl" onClick={() => setIsOpen(false)}>
+          <a href="#contact" className="text-white hover:text-solox-blue transition-colors py-2 text-2xl font-inter" onClick={() => setIsOpen(false)}>
             Contact
           </a>
         </div>

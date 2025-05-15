@@ -22,19 +22,19 @@ const TeamSection = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-solox-blue to-solox-darkblue rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <img 
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" 
-                alt="Christina Vallejo Drake" 
+                src="https://soloxspace.com/wp-content/uploads/2022/10/Kevin-Cannon-SOLOX-Space_2028002494.jpg" 
+                alt="Kevin Cannon" 
                 className="rounded-lg w-full h-auto object-cover relative"
               />
               
               <div className="absolute bottom-4 left-4 flex space-x-3">
-                <a href="#" className="bg-black/70 hover:bg-solox-blue text-white p-2 rounded-full transition-colors" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/kannon/" target="_blank" rel="noopener noreferrer" className="bg-black/70 hover:bg-solox-blue text-white p-2 rounded-full transition-colors" aria-label="LinkedIn">
                   <Linkedin size={18} />
                 </a>
-                <a href="#" className="bg-black/70 hover:bg-solox-blue text-white p-2 rounded-full transition-colors" aria-label="Twitter">
+                <a href="https://twitter.com/cannonkg" target="_blank" rel="noopener noreferrer" className="bg-black/70 hover:bg-solox-blue text-white p-2 rounded-full transition-colors" aria-label="Twitter">
                   <Twitter size={18} />
                 </a>
-                <a href="#" className="bg-black/70 hover:bg-solox-blue text-white p-2 rounded-full transition-colors" aria-label="Website">
+                <a href="https://cannontology.com/" target="_blank" rel="noopener noreferrer" className="bg-black/70 hover:bg-solox-blue text-white p-2 rounded-full transition-colors" aria-label="Website">
                   <Globe size={18} />
                 </a>
               </div>
@@ -42,23 +42,61 @@ const TeamSection = () => {
           </div>
           
           <div className={`md:w-1/2 space-y-5 transition-all duration-1000 delay-300 ${inView ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
-            <h3 className="section-subtitle text-3xl">CHRISTINA VALLEJO DRAKE</h3>
-            <p className="text-solox-blue text-xl font-semibold mb-6">
+            <h3 className="section-subtitle text-3xl">DR. KEVIN CANNON</h3>
+            <p className="text-solox-blue text-xl font-semibold mb-6 font-inter">
               Co-founder & Chief Executive Officer
             </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Christina brings over 15 years of experience in aerospace engineering and mineral resource management. After earning her Ph.D. in Aerospace Engineering from MIT, she worked with leading space agencies and mining corporations to develop innovative remote sensing technologies for resource identification.
+            <p className="text-gray-300 leading-relaxed text-lg font-inter">
+              Dr. Cannon is a planetary scientist with expertise in the characterization of planetary surfaces and the structure and composition of materials, particularly those related to potential space resources.
             </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Her vision for sustainable resource utilization both on Earth and in space has been the driving force behind Solox Space Mining's mission. Christina has published numerous papers on extra-terrestrial resource extraction and is a frequent speaker at international space symposiums.
+            <p className="text-gray-300 leading-relaxed text-lg font-inter">
+              He has published over 40 peer-reviewed papers on topics ranging from lunar resources and the geologic history of Mars, to machine learning applications for remote sensing.
             </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Under her leadership, Solox has developed proprietary remote sensing technology that is revolutionizing how we identify critical mineral deposits both on our planet and beyond.
+            <p className="text-gray-300 leading-relaxed text-lg font-inter">
+              Dr. Cannon was formerly an Assistant Professor at the Colorado School of Mines, where he worked on projects for NASA, the European Space Agency, and commercial space companies, and was the director of the Space Resources Graduate Program.
             </p>
             
             <div className="glass-card inline-flex px-6 py-3 mt-4 items-center gap-4">
               <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse-slow"></div>
-              <span className="text-sm text-gray-300">Currently leading the Mars Reconnaissance Mission</span>
+              <span className="text-sm text-gray-300 font-inter">PhD in Planetary Science from Brown University</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Second team member */}
+        <div className="flex flex-col-reverse md:flex-row items-center gap-12 mt-24">
+          <div className={`md:w-1/2 space-y-5 transition-all duration-1000 delay-300 ${inView ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
+            <h3 className="section-subtitle text-3xl">AXEL EMMERMANN</h3>
+            <p className="text-solox-blue text-xl font-semibold mb-6 font-inter">
+              Director of Earth Applications
+            </p>
+            <p className="text-gray-300 leading-relaxed text-lg font-inter">
+              Axel is an entrepreneur, investor, and engineer with a deep understanding of software architecture and development, and particular expertise in software instrument control.
+            </p>
+            <p className="text-gray-300 leading-relaxed text-lg font-inter">
+              With over 20 years of experience as CEO & CTO in innovative companies spanning high-tech instrumentation, networking, and software for small and large enterprises, Axel brings technical depth and business knowledge to the team.
+            </p>
+            
+            <div className="glass-card inline-flex px-6 py-3 mt-4 items-center gap-4">
+              <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse-slow"></div>
+              <span className="text-sm text-gray-300 font-inter">Former CEO, Chief Software Architect and CTO</span>
+            </div>
+          </div>
+
+          <div className={`md:w-1/2 transition-all duration-1000 ${inView ? 'opacity-100' : 'opacity-0 -translate-y-12'}`}>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-solox-blue to-solox-darkblue rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <img 
+                src="https://soloxspace.com/wp-content/uploads/2022/10/Axel-Emmermann-SOLOX-Space-2.jpg" 
+                alt="Axel Emmermann" 
+                className="rounded-lg w-full h-auto object-cover relative"
+              />
+              
+              <div className="absolute bottom-4 left-4 flex space-x-3">
+                <a href="https://www.linkedin.com/in/axelemmermann/" target="_blank" rel="noopener noreferrer" className="bg-black/70 hover:bg-solox-blue text-white p-2 rounded-full transition-colors" aria-label="LinkedIn">
+                  <Linkedin size={18} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
