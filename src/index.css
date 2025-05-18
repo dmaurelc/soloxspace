@@ -132,6 +132,33 @@
   }
 }
 
+/* White mode text */
+.white-mode-text .text-solox-blue,
+.white-mode-text .hover\:text-solox-blue:hover {
+  @apply text-white;
+}
+
+.white-mode-text .text-gradient {
+  @apply text-white bg-none;
+}
+
+.white-mode-text .section-subtitle {
+  @apply text-white;
+}
+
+.white-mode-text .after\:bg-solox-blue::after,
+.white-mode-text .section-title::after {
+  @apply bg-white;
+}
+
+.white-mode-text .solox-button {
+  @apply border-white text-white hover:bg-white;
+}
+
+.white-mode-text .bg-solox-blue {
+  @apply bg-white;
+}
+
 /* Additional animation keyframes */
 @keyframes floatingAstronaut {
   0% { transform: translateY(0px); }

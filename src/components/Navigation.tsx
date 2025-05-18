@@ -1,12 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import { X, Menu } from 'lucide-react';
+import { X, Menu, Sun } from 'lucide-react';
 import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
+import { Switch } from './ui/switch';
+import { useTheme } from '../context/ThemeContext';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollToElement } = useScrollToAnchor();
+  const { whiteMode, toggleWhiteMode } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,14 +86,24 @@ const Navigation = () => {
             </a>
           </div>
           
-          <div className="md:hidden">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="text-white hover:text-solox-blue transition-colors"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center space-x-2 bg-black/40 backdrop-blur-md py-1 px-3 rounded-full border border-gray-800/50">
+              <Sun size={16} className="text-solox-blue" />
+              <Switch 
+                checked={whiteMode} 
+                onCheckedChange={toggleWhiteMode}
+                className="data-[state=checked]:bg-white"
+              />
+            </div>
+            <div className="md:hidden">
+              <button 
+                onClick={() => setIsOpen(!isOpen)} 
+                className="text-white hover:text-solox-blue transition-colors"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+              >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -141,6 +154,15 @@ const Navigation = () => {
           >
             Contact
           </a>
+          
+          <div className="flex items-center space-x-2 mt-6">
+            <span className="text-white">Color Theme</span>
+            <Switch 
+              checked={whiteMode} 
+              onCheckedChange={toggleWhiteMode}
+              className="data-[state=checked]:bg-white"
+            />
+          </div>
         </div>
       )}
     </nav>
