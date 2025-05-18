@@ -4,6 +4,7 @@ import { X, Menu, Palette } from 'lucide-react';
 import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
 import { useTheme } from '../context/ThemeContext';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
+import { HexColorPicker } from 'react-colorful';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,6 +46,13 @@ const Navigation = () => {
   const handleColorChange = (color: string) => {
     setColorTheme(color);
   };
+
+  const currentColor = colorTheme === 'default' ? '#00BFFF' : 
+    colorTheme === 'lightblue' ? '#60a5fa' : 
+    colorTheme === 'royalblue' ? '#2563eb' :
+    colorTheme === 'navyblue' ? '#1e3a8a' :
+    colorTheme === 'tealblue' ? '#14b8a6' : 
+    colorTheme;
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -107,7 +115,7 @@ const Navigation = () => {
                   className="flex items-center bg-black/40 backdrop-blur-md py-1 px-3 rounded-full border border-gray-800/50"
                   title="Select theme color"
                 >
-                  <Palette size={20} style={{ color: colorTheme === 'default' ? '#00BFFF' : colorTheme }}/>
+                  <Palette size={20} style={{ color: currentColor }}/>
                 </button>
               </PopoverTrigger>
               <PopoverContent className="w-64 p-4 bg-black/90 backdrop-blur-md border-gray-800/50">
@@ -117,8 +125,8 @@ const Navigation = () => {
                     {blueColors.map((color) => (
                       <button
                         key={color.name}
-                        onClick={() => handleColorChange(color.value)}
-                        className="w-full h-8 rounded-md border border-gray-700 flex items-center justify-center"
+                        onClick={() => handleColorChange(color.name === 'Default' ? 'default' : color.value)}
+                        className={`w-full h-8 rounded-md border ${colorTheme === (color.name === 'Default' ? 'default' : color.value) ? 'border-white' : 'border-gray-700'} flex items-center justify-center transition-all hover:scale-105`}
                         style={{ backgroundColor: color.value }}
                         title={color.name}
                       />
@@ -128,12 +136,10 @@ const Navigation = () => {
                     <label htmlFor="custom-color" className="text-xs text-gray-400">
                       Custom Color
                     </label>
-                    <input 
-                      type="color" 
-                      id="custom-color"
-                      className="w-full h-8 cursor-pointer rounded-md"
-                      value={colorTheme !== 'default' ? colorTheme : '#00BFFF'}
-                      onChange={(e) => handleColorChange(e.target.value)}
+                    <HexColorPicker 
+                      color={currentColor} 
+                      onChange={handleColorChange}
+                      className="w-full"
                     />
                   </div>
                 </div>
@@ -203,23 +209,22 @@ const Navigation = () => {
           <div className="flex flex-col items-center space-y-2 mt-6">
             <span className="text-white">Color Theme</span>
             <div className="bg-black/40 backdrop-blur-md p-4 rounded-lg border border-gray-800/50 w-64">
-              <div className="grid grid-cols-5 gap-2 mb-4">
+              <HexColorPicker 
+                color={currentColor} 
+                onChange={handleColorChange}
+                className="w-full"
+              />
+              <div className="grid grid-cols-5 gap-2 mt-4">
                 {blueColors.map((color) => (
                   <button
                     key={color.name}
-                    onClick={() => handleColorChange(color.value)}
-                    className="w-full h-8 rounded-md border border-gray-700"
+                    onClick={() => handleColorChange(color.name === 'Default' ? 'default' : color.value)}
+                    className={`w-full h-8 rounded-md border ${colorTheme === (color.name === 'Default' ? 'default' : color.value) ? 'border-white' : 'border-gray-700'}`}
                     style={{ backgroundColor: color.value }}
                     title={color.name}
                   />
                 ))}
               </div>
-              <input 
-                type="color" 
-                className="w-full h-10 cursor-pointer rounded-md"
-                value={colorTheme !== 'default' ? colorTheme : '#00BFFF'}
-                onChange={(e) => handleColorChange(e.target.value)}
-              />
             </div>
           </div>
         </div>
