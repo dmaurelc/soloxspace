@@ -1,15 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
-import { X, Menu, Sun } from 'lucide-react';
+import { X, Menu, Moon, CircleHalf, Circle, Sun } from 'lucide-react';
 import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
 import { Switch } from './ui/switch';
 import { useTheme } from '../context/ThemeContext';
+import { Toggle } from './ui/toggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollToElement } = useScrollToAnchor();
-  const { whiteMode, toggleWhiteMode } = useTheme();
+  const { colorTheme, setColorTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,13 +88,52 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center gap-4">
-            <div className="flex items-center space-x-2 bg-black/40 backdrop-blur-md py-1 px-3 rounded-full border border-gray-800/50">
-              <Sun size={16} className="text-solox-blue" />
-              <Switch 
-                checked={whiteMode} 
-                onCheckedChange={toggleWhiteMode}
-                className="data-[state=checked]:bg-white"
-              />
+            <div className="flex items-center bg-black/40 backdrop-blur-md py-1 px-3 rounded-full border border-gray-800/50">
+              <div className="flex space-x-1">
+                <Toggle 
+                  variant="outline" 
+                  size="sm" 
+                  pressed={colorTheme === 'default'}
+                  onClick={() => setColorTheme('default')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-solox-blue data-[state=on]:text-black border-0"
+                  title="Default theme"
+                >
+                  <Sun size={16} />
+                </Toggle>
+                
+                <Toggle 
+                  variant="outline" 
+                  size="sm" 
+                  pressed={colorTheme === 'white'}
+                  onClick={() => setColorTheme('white')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-white data-[state=on]:text-black border-0"
+                  title="White theme"
+                >
+                  <Circle size={16} />
+                </Toggle>
+                
+                <Toggle 
+                  variant="outline" 
+                  size="sm" 
+                  pressed={colorTheme === 'skyblue'}
+                  onClick={() => setColorTheme('skyblue')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-sky-300 data-[state=on]:text-black border-0"
+                  title="Sky blue theme"
+                >
+                  <CircleHalf size={16} />
+                </Toggle>
+                
+                <Toggle 
+                  variant="outline" 
+                  size="sm" 
+                  pressed={colorTheme === 'darkblue'}
+                  onClick={() => setColorTheme('darkblue')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-800 data-[state=on]:text-white border-0"
+                  title="Dark blue theme"
+                >
+                  <Moon size={16} />
+                </Toggle>
+              </div>
             </div>
             <div className="md:hidden">
               <button 
@@ -155,13 +195,53 @@ const Navigation = () => {
             Contact
           </a>
           
-          <div className="flex items-center space-x-2 mt-6">
+          <div className="flex flex-col items-center space-y-2 mt-6">
             <span className="text-white">Color Theme</span>
-            <Switch 
-              checked={whiteMode} 
-              onCheckedChange={toggleWhiteMode}
-              className="data-[state=checked]:bg-white"
-            />
+            <div className="flex space-x-2">
+              <Toggle 
+                variant="outline" 
+                size="sm" 
+                pressed={colorTheme === 'default'}
+                onClick={() => setColorTheme('default')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-solox-blue data-[state=on]:text-black border-0"
+                title="Default theme"
+              >
+                <Sun size={18} />
+              </Toggle>
+              
+              <Toggle 
+                variant="outline" 
+                size="sm" 
+                pressed={colorTheme === 'white'}
+                onClick={() => setColorTheme('white')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-white data-[state=on]:text-black border-0"
+                title="White theme"
+              >
+                <Circle size={18} />
+              </Toggle>
+              
+              <Toggle 
+                variant="outline" 
+                size="sm" 
+                pressed={colorTheme === 'skyblue'}
+                onClick={() => setColorTheme('skyblue')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-sky-300 data-[state=on]:text-black border-0"
+                title="Sky blue theme"
+              >
+                <CircleHalf size={18} />
+              </Toggle>
+              
+              <Toggle 
+                variant="outline" 
+                size="sm" 
+                pressed={colorTheme === 'darkblue'}
+                onClick={() => setColorTheme('darkblue')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-800 data-[state=on]:text-white border-0"
+                title="Dark blue theme"
+              >
+                <Moon size={18} />
+              </Toggle>
+            </div>
           </div>
         </div>
       )}

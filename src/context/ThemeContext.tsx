@@ -1,23 +1,39 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
+type ColorTheme = 'default' | 'white' | 'skyblue' | 'darkblue';
+
 type ThemeContextType = {
-  whiteMode: boolean;
-  toggleWhiteMode: () => void;
+  colorTheme: ColorTheme;
+  setColorTheme: (theme: ColorTheme) => void;
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [whiteMode, setWhiteMode] = useState(false);
+  const [colorTheme, setColorTheme] = useState<ColorTheme>('default');
 
-  const toggleWhiteMode = () => {
-    setWhiteMode((prev) => !prev);
-    document.documentElement.classList.toggle('white-mode-text');
+  const handleThemeChange = (theme: ColorTheme) => {
+    // Remove all theme classes first
+    document.documentElement.classList.remove(
+      'white-mode-text', 
+      'skyblue-mode-text',
+      'darkblue-mode-text'
+    );
+    
+    // Add the appropriate class based on theme
+    if (theme !== 'default') {
+      document.documentElement.classList.add(`${theme}-mode-text`);
+    }
+    
+    setColorTheme(theme);
   };
 
   return (
-    <ThemeContext.Provider value={{ whiteMode, toggleWhiteMode }}>
+    <ThemeContext.Provider value={{ 
+      colorTheme, 
+      setColorTheme: handleThemeChange 
+    }}>
       {children}
     </ThemeContext.Provider>
   );

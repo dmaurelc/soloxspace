@@ -159,6 +159,60 @@
   @apply bg-white;
 }
 
+/* Sky Blue mode */
+.skyblue-mode-text .text-solox-blue,
+.skyblue-mode-text .hover\:text-solox-blue:hover {
+  @apply text-sky-300;
+}
+
+.skyblue-mode-text .text-gradient {
+  @apply bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent;
+}
+
+.skyblue-mode-text .section-subtitle {
+  @apply text-sky-300;
+}
+
+.skyblue-mode-text .after\:bg-solox-blue::after,
+.skyblue-mode-text .section-title::after {
+  @apply bg-sky-300;
+}
+
+.skyblue-mode-text .solox-button {
+  @apply border-sky-300 text-sky-300 hover:bg-sky-300;
+}
+
+.skyblue-mode-text .bg-solox-blue {
+  @apply bg-sky-300;
+}
+
+/* Dark Blue mode */
+.darkblue-mode-text .text-solox-blue,
+.darkblue-mode-text .hover\:text-solox-blue:hover {
+  @apply text-blue-800;
+}
+
+.darkblue-mode-text .text-gradient {
+  @apply bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent;
+}
+
+.darkblue-mode-text .section-subtitle {
+  @apply text-blue-800;
+}
+
+.darkblue-mode-text .after\:bg-solox-blue::after,
+.darkblue-mode-text .section-title::after {
+  @apply bg-blue-800;
+}
+
+.darkblue-mode-text .solox-button {
+  @apply border-blue-800 text-blue-800 hover:bg-blue-800;
+}
+
+.darkblue-mode-text .bg-solox-blue {
+  @apply bg-blue-800;
+}
+
 /* Additional animation keyframes */
 @keyframes floatingAstronaut {
   0% { transform: translateY(0px); }
