@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { X, Menu, Moon, CircleHalf, Circle, Sun } from 'lucide-react';
+import { X, Menu, Moon, CircleHelp, Circle, Sun } from 'lucide-react';
 import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
 import { Switch } from './ui/switch';
 import { useTheme } from '../context/ThemeContext';
@@ -120,7 +119,7 @@ const Navigation = () => {
                   className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-sky-300 data-[state=on]:text-black border-0"
                   title="Sky blue theme"
                 >
-                  <CircleHalf size={16} />
+                  <CircleHelp size={16} />
                 </Toggle>
                 
                 <Toggle 
@@ -228,7 +227,7 @@ const Navigation = () => {
                 className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-sky-300 data-[state=on]:text-black border-0"
                 title="Sky blue theme"
               >
-                <CircleHalf size={18} />
+                <CircleHelp size={18} />
               </Toggle>
               
               <Toggle 
