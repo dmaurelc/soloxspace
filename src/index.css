@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -132,7 +131,117 @@
   }
 }
 
-/* White mode text */
+/* Default blue is already in the base CSS */
+
+/* Light Blue mode */
+.lightblue-mode-text .text-solox-blue,
+.lightblue-mode-text .hover\:text-solox-blue:hover {
+  @apply text-blue-400;
+}
+
+.lightblue-mode-text .text-gradient {
+  @apply bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent;
+}
+
+.lightblue-mode-text .section-subtitle {
+  @apply text-blue-400;
+}
+
+.lightblue-mode-text .after\:bg-solox-blue::after,
+.lightblue-mode-text .section-title::after {
+  @apply bg-blue-400;
+}
+
+.lightblue-mode-text .solox-button {
+  @apply border-blue-400 text-blue-400 hover:bg-blue-400;
+}
+
+.lightblue-mode-text .bg-solox-blue {
+  @apply bg-blue-400;
+}
+
+/* Royal Blue mode */
+.royalblue-mode-text .text-solox-blue,
+.royalblue-mode-text .hover\:text-solox-blue:hover {
+  @apply text-blue-600;
+}
+
+.royalblue-mode-text .text-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent;
+}
+
+.royalblue-mode-text .section-subtitle {
+  @apply text-blue-600;
+}
+
+.royalblue-mode-text .after\:bg-solox-blue::after,
+.royalblue-mode-text .section-title::after {
+  @apply bg-blue-600;
+}
+
+.royalblue-mode-text .solox-button {
+  @apply border-blue-600 text-blue-600 hover:bg-blue-600;
+}
+
+.royalblue-mode-text .bg-solox-blue {
+  @apply bg-blue-600;
+}
+
+/* Navy Blue mode */
+.navyblue-mode-text .text-solox-blue,
+.navyblue-mode-text .hover\:text-solox-blue:hover {
+  @apply text-blue-900;
+}
+
+.navyblue-mode-text .text-gradient {
+  @apply bg-gradient-to-r from-blue-800 to-blue-900 bg-clip-text text-transparent;
+}
+
+.navyblue-mode-text .section-subtitle {
+  @apply text-blue-900;
+}
+
+.navyblue-mode-text .after\:bg-solox-blue::after,
+.navyblue-mode-text .section-title::after {
+  @apply bg-blue-900;
+}
+
+.navyblue-mode-text .solox-button {
+  @apply border-blue-900 text-blue-900 hover:bg-blue-900;
+}
+
+.navyblue-mode-text .bg-solox-blue {
+  @apply bg-blue-900;
+}
+
+/* Teal Blue mode */
+.tealblue-mode-text .text-solox-blue,
+.tealblue-mode-text .hover\:text-solox-blue:hover {
+  @apply text-teal-500;
+}
+
+.tealblue-mode-text .text-gradient {
+  @apply bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent;
+}
+
+.tealblue-mode-text .section-subtitle {
+  @apply text-teal-500;
+}
+
+.tealblue-mode-text .after\:bg-solox-blue::after,
+.tealblue-mode-text .section-title::after {
+  @apply bg-teal-500;
+}
+
+.tealblue-mode-text .solox-button {
+  @apply border-teal-500 text-teal-500 hover:bg-teal-500;
+}
+
+.tealblue-mode-text .bg-solox-blue {
+  @apply bg-teal-500;
+}
+
+/* White mode text - keeping this from original code */
 .white-mode-text .text-solox-blue,
 .white-mode-text .hover\:text-solox-blue:hover {
   @apply text-white;
@@ -157,60 +266,6 @@
 
 .white-mode-text .bg-solox-blue {
   @apply bg-white;
-}
-
-/* Sky Blue mode */
-.skyblue-mode-text .text-solox-blue,
-.skyblue-mode-text .hover\:text-solox-blue:hover {
-  @apply text-sky-300;
-}
-
-.skyblue-mode-text .text-gradient {
-  @apply bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent;
-}
-
-.skyblue-mode-text .section-subtitle {
-  @apply text-sky-300;
-}
-
-.skyblue-mode-text .after\:bg-solox-blue::after,
-.skyblue-mode-text .section-title::after {
-  @apply bg-sky-300;
-}
-
-.skyblue-mode-text .solox-button {
-  @apply border-sky-300 text-sky-300 hover:bg-sky-300;
-}
-
-.skyblue-mode-text .bg-solox-blue {
-  @apply bg-sky-300;
-}
-
-/* Dark Blue mode */
-.darkblue-mode-text .text-solox-blue,
-.darkblue-mode-text .hover\:text-solox-blue:hover {
-  @apply text-blue-800;
-}
-
-.darkblue-mode-text .text-gradient {
-  @apply bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent;
-}
-
-.darkblue-mode-text .section-subtitle {
-  @apply text-blue-800;
-}
-
-.darkblue-mode-text .after\:bg-solox-blue::after,
-.darkblue-mode-text .section-title::after {
-  @apply bg-blue-800;
-}
-
-.darkblue-mode-text .solox-button {
-  @apply border-blue-800 text-blue-800 hover:bg-blue-800;
-}
-
-.darkblue-mode-text .bg-solox-blue {
-  @apply bg-blue-800;
 }
 
 /* Additional animation keyframes */

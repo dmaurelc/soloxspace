@@ -73,14 +73,17 @@ export default {
 					darkgray: '#121212',
 					white: '#FFFFFF',
 				},
-				sky: {
-					300: '#7dd3fc',
-					500: '#0ea5e9',
-				},
 				blue: {
-					700: '#1d4ed8',
+					400: '#60a5fa',  // Light blue
+					500: '#3b82f6',
+					600: '#2563eb',  // Royal blue
+					700: '#1d4ed8', 
 					800: '#1e40af',
-					900: '#1e3a8a',
+					900: '#1e3a8a',  // Navy blue
+				},
+				teal: {
+					500: '#14b8a6',  // Teal blue
+					600: '#0d9488',
 				}
 			},
 			borderRadius: {

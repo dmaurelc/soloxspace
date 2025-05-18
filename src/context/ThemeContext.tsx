@@ -1,7 +1,8 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-type ColorTheme = 'default' | 'white' | 'skyblue' | 'darkblue';
+// Define los tonos de azul disponibles como opciones
+type ColorTheme = 'default' | 'lightblue' | 'royalblue' | 'navyblue' | 'tealblue';
 
 type ThemeContextType = {
   colorTheme: ColorTheme;
@@ -16,9 +17,10 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const handleThemeChange = (theme: ColorTheme) => {
     // Remove all theme classes first
     document.documentElement.classList.remove(
-      'white-mode-text', 
-      'skyblue-mode-text',
-      'darkblue-mode-text'
+      'lightblue-mode-text', 
+      'royalblue-mode-text',
+      'navyblue-mode-text',
+      'tealblue-mode-text'
     );
     
     // Add the appropriate class based on theme

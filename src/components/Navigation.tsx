@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
-import { X, Menu, Moon, CircleHelp, Circle, Sun } from 'lucide-react';
+import { X, Menu, Palette, Droplet, Waves, CircleDashed } from 'lucide-react';
 import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
-import { Switch } from './ui/switch';
 import { useTheme } from '../context/ThemeContext';
 import { Toggle } from './ui/toggle';
+import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,42 +96,53 @@ const Navigation = () => {
                   pressed={colorTheme === 'default'}
                   onClick={() => setColorTheme('default')}
                   className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-solox-blue data-[state=on]:text-black border-0"
-                  title="Default theme"
+                  title="Default blue (#00BFFF)"
                 >
-                  <Sun size={16} />
+                  <Palette size={16} />
+                </Toggle>
+
+                <Toggle 
+                  variant="outline" 
+                  size="sm" 
+                  pressed={colorTheme === 'lightblue'}
+                  onClick={() => setColorTheme('lightblue')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-400 data-[state=on]:text-black border-0"
+                  title="Light blue"
+                >
+                  <Droplet size={16} />
                 </Toggle>
                 
                 <Toggle 
                   variant="outline" 
                   size="sm" 
-                  pressed={colorTheme === 'white'}
-                  onClick={() => setColorTheme('white')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-white data-[state=on]:text-black border-0"
-                  title="White theme"
+                  pressed={colorTheme === 'royalblue'}
+                  onClick={() => setColorTheme('royalblue')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-600 data-[state=on]:text-white border-0"
+                  title="Royal blue"
                 >
-                  <Circle size={16} />
+                  <Waves size={16} />
                 </Toggle>
                 
                 <Toggle 
                   variant="outline" 
                   size="sm" 
-                  pressed={colorTheme === 'skyblue'}
-                  onClick={() => setColorTheme('skyblue')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-sky-300 data-[state=on]:text-black border-0"
-                  title="Sky blue theme"
+                  pressed={colorTheme === 'navyblue'}
+                  onClick={() => setColorTheme('navyblue')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-900 data-[state=on]:text-white border-0"
+                  title="Navy blue"
                 >
-                  <CircleHelp size={16} />
+                  <CircleDashed size={16} />
                 </Toggle>
-                
+
                 <Toggle 
                   variant="outline" 
                   size="sm" 
-                  pressed={colorTheme === 'darkblue'}
-                  onClick={() => setColorTheme('darkblue')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-800 data-[state=on]:text-white border-0"
-                  title="Dark blue theme"
+                  pressed={colorTheme === 'tealblue'}
+                  onClick={() => setColorTheme('tealblue')}
+                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-teal-500 data-[state=on]:text-white border-0"
+                  title="Teal blue"
                 >
-                  <Moon size={16} />
+                  <Droplet size={16} className="rotate-180" />
                 </Toggle>
               </div>
             </div>
@@ -203,42 +215,53 @@ const Navigation = () => {
                 pressed={colorTheme === 'default'}
                 onClick={() => setColorTheme('default')}
                 className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-solox-blue data-[state=on]:text-black border-0"
-                title="Default theme"
+                title="Default blue (#00BFFF)"
               >
-                <Sun size={18} />
+                <Palette size={18} />
               </Toggle>
               
               <Toggle 
                 variant="outline" 
                 size="sm" 
-                pressed={colorTheme === 'white'}
-                onClick={() => setColorTheme('white')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-white data-[state=on]:text-black border-0"
-                title="White theme"
+                pressed={colorTheme === 'lightblue'}
+                onClick={() => setColorTheme('lightblue')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-400 data-[state=on]:text-black border-0"
+                title="Light blue"
               >
-                <Circle size={18} />
+                <Droplet size={18} />
               </Toggle>
               
               <Toggle 
                 variant="outline" 
                 size="sm" 
-                pressed={colorTheme === 'skyblue'}
-                onClick={() => setColorTheme('skyblue')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-sky-300 data-[state=on]:text-black border-0"
-                title="Sky blue theme"
+                pressed={colorTheme === 'royalblue'}
+                onClick={() => setColorTheme('royalblue')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-600 data-[state=on]:text-white border-0"
+                title="Royal blue"
               >
-                <CircleHelp size={18} />
+                <Waves size={18} />
               </Toggle>
               
               <Toggle 
                 variant="outline" 
                 size="sm" 
-                pressed={colorTheme === 'darkblue'}
-                onClick={() => setColorTheme('darkblue')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-800 data-[state=on]:text-white border-0"
-                title="Dark blue theme"
+                pressed={colorTheme === 'navyblue'}
+                onClick={() => setColorTheme('navyblue')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-900 data-[state=on]:text-white border-0"
+                title="Navy blue"
               >
-                <Moon size={18} />
+                <CircleDashed size={18} />
+              </Toggle>
+
+              <Toggle 
+                variant="outline" 
+                size="sm" 
+                pressed={colorTheme === 'tealblue'}
+                onClick={() => setColorTheme('tealblue')}
+                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-teal-500 data-[state=on]:text-white border-0"
+                title="Teal blue"
+              >
+                <Droplet size={18} className="rotate-180" />
               </Toggle>
             </div>
           </div>
