@@ -37,7 +37,7 @@ const Hero = () => {
           
           <div className={`max-w-3xl mx-auto transition-all duration-1000 delay-500 ${loaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             <p className="text-xl md:text-2xl mb-10 text-center leading-relaxed font-inter">
-              <span className="text-solox-blue font-semibold">Remote Precise Exploration Technology</span> to 
+              <span className="text-solox-blue font-semibold">Exploration Technology</span> to 
               discover critical resources on the Moon and Mars 
               for ISRU and sustainable infrastructure, and 
               critical minerals on Earth to support future 
