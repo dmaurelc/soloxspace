@@ -22,8 +22,8 @@ const AboutSection = () => {
           ABOUT <span className="text-gradient">SOLOX SPACE MINING</span>
         </h2>
 
-        <p className="text-gray-300 text-lg leading-relaxed font-inter">
-              The future of Space exploration, energy transition, and sustainable development depends on the availability of essential resources, both on Earth and in Space. SOLOX SPACE MINING focuses on remote exploration technologies to identify critical minerals and resources necessary for enabling these advancements.
+        <p className="text-gray-300 text-lg leading-relaxed font-inter text-center">
+              The future of Space exploration, energy transition, and sustainable development depends on the availability of essential resources.
             </p>
         
         <div className="flex flex-col md:flex-row items-center gap-12 mt-16">
