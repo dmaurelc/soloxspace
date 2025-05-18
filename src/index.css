@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,7 +45,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
     
     /* Color personalizado para el tema */
-    --custom-blue-color: #00BFFF;
+    --custom-blue-color: #00ACFB;
   }
 
   .dark {

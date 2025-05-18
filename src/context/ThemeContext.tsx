@@ -12,7 +12,8 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [colorTheme, setColorTheme] = useState<ColorTheme>('default');
+  // Set the default color to #00ACFB
+  const [colorTheme, setColorTheme] = useState<ColorTheme>('#00ACFB');
 
   const handleThemeChange = (theme: ColorTheme) => {
     // Remove all theme classes first
@@ -25,8 +26,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     );
     
     if (theme === 'default') {
-      // Usar el color azul por defecto
-      document.documentElement.style.setProperty('--custom-blue-color', '#00BFFF');
+      // Usar el color azul por defecto (#00ACFB)
+      document.documentElement.style.setProperty('--custom-blue-color', '#00ACFB');
     } else if (['lightblue', 'royalblue', 'navyblue', 'tealblue'].includes(theme)) {
       // Usar uno de los temas predefinidos
       document.documentElement.classList.add(`${theme}-mode-text`);
@@ -38,6 +39,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     
     setColorTheme(theme);
   };
+
+  // Initialize the color when the component mounts
+  React.useEffect(() => {
+    handleThemeChange(colorTheme);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ 

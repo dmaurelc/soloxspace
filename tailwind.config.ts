@@ -67,7 +67,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				solox: {
-					blue: '#00BFFF',
+					blue: '#00ACFB', // Updated to the requested blue color
 					darkblue: '#0077B6',
 					black: '#000000',
 					darkgray: '#121212',
