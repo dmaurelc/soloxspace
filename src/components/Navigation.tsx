@@ -1,16 +1,24 @@
 
 import React, { useState, useEffect } from 'react';
-import { X, Menu, Palette, Droplet, Waves, CircleDashed } from 'lucide-react';
+import { X, Menu, Palette } from 'lucide-react';
 import { useScrollToAnchor } from '../hooks/useScrollToAnchor';
 import { useTheme } from '../context/ThemeContext';
-import { Toggle } from './ui/toggle';
-import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group';
+import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollToElement } = useScrollToAnchor();
   const { colorTheme, setColorTheme } = useTheme();
+
+  // Colores azules predefinidos
+  const blueColors = [
+    { name: 'Default', value: '#00BFFF' },
+    { name: 'Light Blue', value: '#60a5fa' },
+    { name: 'Royal Blue', value: '#2563eb' },
+    { name: 'Navy Blue', value: '#1e3a8a' },
+    { name: 'Teal Blue', value: '#14b8a6' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +39,11 @@ const Navigation = () => {
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     scrollToElement(e, targetId);
     setIsOpen(false);
+  };
+
+  // Función para manejar cambios de color personalizado
+  const handleColorChange = (color: string) => {
+    setColorTheme(color);
   };
 
   return (
@@ -88,64 +101,45 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center gap-4">
-            <div className="flex items-center bg-black/40 backdrop-blur-md py-1 px-3 rounded-full border border-gray-800/50">
-              <div className="flex space-x-1">
-                <Toggle 
-                  variant="outline" 
-                  size="sm" 
-                  pressed={colorTheme === 'default'}
-                  onClick={() => setColorTheme('default')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-solox-blue data-[state=on]:text-black border-0"
-                  title="Default blue (#00BFFF)"
+            <Popover>
+              <PopoverTrigger asChild>
+                <button 
+                  className="flex items-center bg-black/40 backdrop-blur-md py-1 px-3 rounded-full border border-gray-800/50"
+                  title="Select theme color"
                 >
-                  <Palette size={16} />
-                </Toggle>
+                  <Palette size={20} style={{ color: colorTheme === 'default' ? '#00BFFF' : colorTheme }}/>
+                </button>
+              </PopoverTrigger>
+              <PopoverContent className="w-64 p-4 bg-black/90 backdrop-blur-md border-gray-800/50">
+                <div className="space-y-4">
+                  <h4 className="text-sm font-medium text-white">Select Blue Theme</h4>
+                  <div className="grid grid-cols-5 gap-2">
+                    {blueColors.map((color) => (
+                      <button
+                        key={color.name}
+                        onClick={() => handleColorChange(color.value)}
+                        className="w-full h-8 rounded-md border border-gray-700 flex items-center justify-center"
+                        style={{ backgroundColor: color.value }}
+                        title={color.name}
+                      />
+                    ))}
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="custom-color" className="text-xs text-gray-400">
+                      Custom Color
+                    </label>
+                    <input 
+                      type="color" 
+                      id="custom-color"
+                      className="w-full h-8 cursor-pointer rounded-md"
+                      value={colorTheme !== 'default' ? colorTheme : '#00BFFF'}
+                      onChange={(e) => handleColorChange(e.target.value)}
+                    />
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
 
-                <Toggle 
-                  variant="outline" 
-                  size="sm" 
-                  pressed={colorTheme === 'lightblue'}
-                  onClick={() => setColorTheme('lightblue')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-400 data-[state=on]:text-black border-0"
-                  title="Light blue"
-                >
-                  <Droplet size={16} />
-                </Toggle>
-                
-                <Toggle 
-                  variant="outline" 
-                  size="sm" 
-                  pressed={colorTheme === 'royalblue'}
-                  onClick={() => setColorTheme('royalblue')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-600 data-[state=on]:text-white border-0"
-                  title="Royal blue"
-                >
-                  <Waves size={16} />
-                </Toggle>
-                
-                <Toggle 
-                  variant="outline" 
-                  size="sm" 
-                  pressed={colorTheme === 'navyblue'}
-                  onClick={() => setColorTheme('navyblue')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-blue-900 data-[state=on]:text-white border-0"
-                  title="Navy blue"
-                >
-                  <CircleDashed size={16} />
-                </Toggle>
-
-                <Toggle 
-                  variant="outline" 
-                  size="sm" 
-                  pressed={colorTheme === 'tealblue'}
-                  onClick={() => setColorTheme('tealblue')}
-                  className="rounded-full h-7 w-7 p-0 data-[state=on]:bg-teal-500 data-[state=on]:text-white border-0"
-                  title="Teal blue"
-                >
-                  <Droplet size={16} className="rotate-180" />
-                </Toggle>
-              </div>
-            </div>
             <div className="md:hidden">
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
@@ -208,61 +202,24 @@ const Navigation = () => {
           
           <div className="flex flex-col items-center space-y-2 mt-6">
             <span className="text-white">Color Theme</span>
-            <div className="flex space-x-2">
-              <Toggle 
-                variant="outline" 
-                size="sm" 
-                pressed={colorTheme === 'default'}
-                onClick={() => setColorTheme('default')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-solox-blue data-[state=on]:text-black border-0"
-                title="Default blue (#00BFFF)"
-              >
-                <Palette size={18} />
-              </Toggle>
-              
-              <Toggle 
-                variant="outline" 
-                size="sm" 
-                pressed={colorTheme === 'lightblue'}
-                onClick={() => setColorTheme('lightblue')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-400 data-[state=on]:text-black border-0"
-                title="Light blue"
-              >
-                <Droplet size={18} />
-              </Toggle>
-              
-              <Toggle 
-                variant="outline" 
-                size="sm" 
-                pressed={colorTheme === 'royalblue'}
-                onClick={() => setColorTheme('royalblue')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-600 data-[state=on]:text-white border-0"
-                title="Royal blue"
-              >
-                <Waves size={18} />
-              </Toggle>
-              
-              <Toggle 
-                variant="outline" 
-                size="sm" 
-                pressed={colorTheme === 'navyblue'}
-                onClick={() => setColorTheme('navyblue')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-blue-900 data-[state=on]:text-white border-0"
-                title="Navy blue"
-              >
-                <CircleDashed size={18} />
-              </Toggle>
-
-              <Toggle 
-                variant="outline" 
-                size="sm" 
-                pressed={colorTheme === 'tealblue'}
-                onClick={() => setColorTheme('tealblue')}
-                className="rounded-full h-9 w-9 p-0 data-[state=on]:bg-teal-500 data-[state=on]:text-white border-0"
-                title="Teal blue"
-              >
-                <Droplet size={18} className="rotate-180" />
-              </Toggle>
+            <div className="bg-black/40 backdrop-blur-md p-4 rounded-lg border border-gray-800/50 w-64">
+              <div className="grid grid-cols-5 gap-2 mb-4">
+                {blueColors.map((color) => (
+                  <button
+                    key={color.name}
+                    onClick={() => handleColorChange(color.value)}
+                    className="w-full h-8 rounded-md border border-gray-700"
+                    style={{ backgroundColor: color.value }}
+                    title={color.name}
+                  />
+                ))}
+              </div>
+              <input 
+                type="color" 
+                className="w-full h-10 cursor-pointer rounded-md"
+                value={colorTheme !== 'default' ? colorTheme : '#00BFFF'}
+                onChange={(e) => handleColorChange(e.target.value)}
+              />
             </div>
           </div>
         </div>

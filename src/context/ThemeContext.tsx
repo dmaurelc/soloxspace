@@ -1,8 +1,8 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-// Define los tonos de azul disponibles como opciones
-type ColorTheme = 'default' | 'lightblue' | 'royalblue' | 'navyblue' | 'tealblue';
+// Define los tipos de color disponibles
+type ColorTheme = 'default' | string; // Permitir cualquier valor de color personalizado
 
 type ThemeContextType = {
   colorTheme: ColorTheme;
@@ -20,12 +20,20 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       'lightblue-mode-text', 
       'royalblue-mode-text',
       'navyblue-mode-text',
-      'tealblue-mode-text'
+      'tealblue-mode-text',
+      'custom-blue-mode-text'
     );
     
-    // Add the appropriate class based on theme
-    if (theme !== 'default') {
+    if (theme === 'default') {
+      // Usar el color azul por defecto
+      document.documentElement.style.setProperty('--custom-blue-color', '#00BFFF');
+    } else if (['lightblue', 'royalblue', 'navyblue', 'tealblue'].includes(theme)) {
+      // Usar uno de los temas predefinidos
       document.documentElement.classList.add(`${theme}-mode-text`);
+    } else {
+      // Usar un color personalizado
+      document.documentElement.style.setProperty('--custom-blue-color', theme);
+      document.documentElement.classList.add('custom-blue-mode-text');
     }
     
     setColorTheme(theme);

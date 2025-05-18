@@ -42,6 +42,9 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Color personalizado para el tema */
+    --custom-blue-color: #00BFFF;
   }
 
   .dark {
@@ -239,6 +242,40 @@
 
 .tealblue-mode-text .bg-solox-blue {
   @apply bg-teal-500;
+}
+
+/* Custom Blue mode */
+.custom-blue-mode-text .text-solox-blue,
+.custom-blue-mode-text .hover\:text-solox-blue:hover {
+  color: var(--custom-blue-color);
+}
+
+.custom-blue-mode-text .text-gradient {
+  background: linear-gradient(to right, var(--custom-blue-color), color-mix(in srgb, var(--custom-blue-color), black 20%));
+  background-clip: text;
+  color: transparent;
+}
+
+.custom-blue-mode-text .section-subtitle {
+  color: var(--custom-blue-color);
+}
+
+.custom-blue-mode-text .after\:bg-solox-blue::after,
+.custom-blue-mode-text .section-title::after {
+  background-color: var(--custom-blue-color);
+}
+
+.custom-blue-mode-text .solox-button {
+  border-color: var(--custom-blue-color);
+  color: var(--custom-blue-color);
+}
+
+.custom-blue-mode-text .solox-button:hover {
+  background-color: var(--custom-blue-color);
+}
+
+.custom-blue-mode-text .bg-solox-blue {
+  background-color: var(--custom-blue-color);
 }
 
 /* White mode text - keeping this from original code */
