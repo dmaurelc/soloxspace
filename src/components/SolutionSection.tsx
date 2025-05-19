@@ -20,7 +20,7 @@ const SolutionSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black to-black/90 z-0"></div>
 
       {/* Background starfield */}
-      <div className="absolute inset-0 bg-space-pattern opacity-20 z-0"></div>
+      <div className="absolute inset-0  opacity-20 z-0"></div>
 
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
         <h2 className="section-title">
@@ -69,7 +69,28 @@ const SolutionSection = () => {
               </div>
             </div>
 
-            <div className="pt-8">
+            <h3 className="text-solox-blue font-audiowide text-3xl mb-6">
+              ON EARTH
+            </h3>
+
+            <div className="space-y-8">
+              <div className="glass-card p-6 hover:border-solox-blue transition-colors">
+                <div className="flex items-start gap-4">
+                  <CircleDot size={24} className="text-solox-blue mt-1" />
+                  <div>
+                    <h4 className="text-xl font-semibold text-white mb-2">
+                      Critical Minerals
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed">
+                      Copper, Molybdenum, Cobalt, and Nickel: Critical Minerals
+                      for the energy transition and new technologies.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="pt-8">
               <a
                 href="#minerals"
                 className="solox-button hover:text-solox-white"
@@ -77,7 +98,7 @@ const SolutionSection = () => {
               >
                 LEARN ABOUT EARTH MINERALS
               </a>
-            </div>
+            </div> */}
           </div>
 
           <div

@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# SoloXSpace
 
-## Project info
+## Acerca del Proyecto
 
-**URL**: https://lovable.dev/projects/82fbd303-5498-4c39-ba9c-8d675c3fe399
+SoloXSpace es un proyecto web moderno desarrollado con tecnologías de vanguardia para ofrecer una experiencia de usuario excepcional. El proyecto está diseñado para ser altamente responsivo, accesible y con una interfaz de usuario elegante y funcional.
 
-## How can I edit this code?
+**URL del Proyecto**: [SoloXSpace](https://soloxspace.com)
 
-There are several ways of editing your application.
+## Tecnologías Utilizadas
 
-**Use Lovable**
+Este proyecto ha sido construido utilizando un stack tecnológico moderno:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/82fbd303-5498-4c39-ba9c-8d675c3fe399) and start prompting.
+- **Framework Principal**: React 18
+- **Compilación y Bundling**: Vite 5
+- **Lenguaje de Programación**: TypeScript 5
+- **Enrutamiento**: React Router DOM 6
+- **Interfaz de Usuario**:
+  - shadcn/ui (basado en componentes de Radix UI)
+  - Tailwind CSS 3
+  - Lucide React (iconos)
+- **Formularios y Validación**:
+  - React Hook Form
+  - Zod (validación de esquemas)
+- **Componentes Avanzados**:
+  - Embla Carousel (carruseles)
+  - React Day Picker (selector de fechas)
+  - Recharts (gráficos y visualizaciones)
+  - Sonner (notificaciones tipo toast)
+- **Gestión de Estado**:
+  - TanStack React Query
 
-Changes made via Lovable will be committed automatically to this repo.
+## Características Principales
 
-**Use your preferred IDE**
+- Diseño responsivo para todos los dispositivos
+- Interfaz de usuario moderna y accesible
+- Componentes reutilizables y personalizables
+- Soporte para temas claro/oscuro
+- Sistema de formularios robusto con validación
+- Navegación fluida entre páginas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Estructura del Proyecto
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+El proyecto sigue una estructura organizada para facilitar el mantenimiento y la escalabilidad:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/82fbd303-5498-4c39-ba9c-8d675c3fe399) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+soloxspace/
+├── public/          # Archivos estáticos
+├── src/             # Código fuente
+│   ├── assets/      # Recursos (imágenes, fuentes, etc.)
+│   ├── components/  # Componentes reutilizables
+│   ├── hooks/       # Custom hooks
+│   ├── layouts/     # Layouts de la aplicación
+│   ├── lib/         # Utilidades y configuraciones
+│   ├── pages/       # Páginas de la aplicación
+│   ├── styles/      # Estilos globales
+│   ├── types/       # Definiciones de tipos TypeScript
+│   ├── App.tsx      # Componente principal
+│   └── main.tsx     # Punto de entrada
+└── ...              # Archivos de configuración
+```

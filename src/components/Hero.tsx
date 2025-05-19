@@ -18,10 +18,11 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black"></div>
       <img
-        src="/images/planets2.jpg"
+        src="/images/planets-2.webp"
         alt="Planets"
         className="absolute inset-0 w-full h-full object-cover object-top opacity-70 animate-pulse z-0"
       />
+      <div className="absolute left-0 bottom-0 w-full h-full  inset-0 bg-gradient-to-t from-black to-60% z-10"></div>
 
       <div className="container mx-auto px-4 relative z-10 text-center py-20">
         <div className="flex flex-col items-center justify-center space-y-8">
