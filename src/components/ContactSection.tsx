@@ -14,6 +14,7 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -64,6 +65,8 @@ const ContactSection = () => {
           email: '',
           message: ''
         });
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 5000);
       } else {
         throw new Error(data.message || "Error al enviar el mensaje");
       }
@@ -183,7 +186,7 @@ const ContactSection = () => {
                 >
                   {isSubmitting ? (
                     'SENDING...'
-                  ) : submitted ? (
+                  ) : isSubmitted ? (
                     <>
                       MESSAGE SENT <Check className="ml-2" size={16} />
                     </>
