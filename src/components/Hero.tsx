@@ -15,16 +15,13 @@ const Hero = () => {
   };
 
   return (
-    <section
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/planets2.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black"></div>
+      <img
+        src="/images/planets2.jpg"
+        alt="Planets"
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-70 animate-pulse z-0"
+      />
 
       <div className="container mx-auto px-4 relative z-10 text-center py-20">
         <div className="flex flex-col items-center justify-center space-y-8">
@@ -44,8 +41,8 @@ const Hero = () => {
               loaded ? "opacity-100" : "opacity-0 translate-y-10"
             }`}
           >
-            <p className="text-xl md:text-2xl mb-10 text-center leading-relaxed font-inter">
-              <span className="text-solox-blue font-semibold">
+            <p className="text-xl md:text-4xl mb-20 text-center leading-relaxed font-audiowide">
+              <span className="text-solox-white font-normal">
                 Exploration Technology
               </span>
             </p>
