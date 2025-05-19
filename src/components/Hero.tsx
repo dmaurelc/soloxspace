@@ -19,7 +19,7 @@ const Hero = () => {
     <section 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
-        backgroundImage: "url('https://www.soloxspace.com/imagenes/planets2.jpg')",
+        backgroundImage: "url('/images/planets2.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
