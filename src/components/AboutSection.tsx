@@ -30,7 +30,7 @@ const AboutSection = () => {
           <div className={`md:w-1/2 transition-all duration-1000 ${inView ? 'opacity-100' : 'opacity-0 -translate-x-12'}`}>
             <div className="relative">
               <img 
-                src="https://www.soloxspace.com/imagenes/p2.1.1.jpg" 
+                src="/images/p2.1.1.jpg" 
                 alt="Solox Space Mining" 
                 className="rounded-lg w-full h-auto object-cover shadow-xl shadow-solox-blue/10 hover-scale"
               />

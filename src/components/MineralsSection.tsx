@@ -43,7 +43,7 @@ const MineralsSection = () => {
           >
             <div className="relative h-60 overflow-hidden">
               <img 
-                src="https://www.soloxspace.com/imagenes/p1.png" 
+                src="/images/p1.png" 
                 alt="Copper" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
@@ -69,7 +69,7 @@ const MineralsSection = () => {
           >
             <div className="relative h-60 overflow-hidden">
               <img 
-                src="https://www.soloxspace.com/imagenes/p2.jpg" 
+                src="/images/p2.jpg" 
                 alt="Cobalt" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
@@ -95,7 +95,7 @@ const MineralsSection = () => {
           >
             <div className="relative h-60 overflow-hidden">
               <img 
-                src="https://www.soloxspace.com/imagenes/molibdeno2.png" 
+                src="/images/molibdeno2.png" 
                 alt="Molybdenum" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
@@ -132,7 +132,7 @@ const MineralsSection = () => {
           <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 transition-all duration-1000 delay-100 ${detailsVisible ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
             <div className="w-full md:w-1/2">
               <img 
-                src="https://www.soloxspace.com/imagenes/remo.png" 
+                src="/images/remo.png" 
                 alt="Copper applications in renewable energy" 
                 className="w-full h-auto rounded-xl shadow-xl"
               />
@@ -149,7 +149,7 @@ const MineralsSection = () => {
           <div className={`flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 transition-all duration-1000 delay-300 ${detailsVisible ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
             <div className="w-full md:w-1/2">
               <img 
-                src="https://www.soloxspace.com/imagenes/carro.jpg" 
+                src="/images/carro.jpg" 
                 alt="Cobalt applications in electric vehicles" 
                 className="w-full h-auto rounded-xl shadow-xl"
               />
@@ -166,7 +166,7 @@ const MineralsSection = () => {
           <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 transition-all duration-1000 delay-500 ${detailsVisible ? 'opacity-100' : 'opacity-0 translate-y-12'}`}>
             <div className="w-full md:w-1/2">
               <img 
-                src="https://www.soloxspace.com/imagenes/molibdeno.png" 
+                src="/images/molibdeno.png" 
                 alt="Molybdenum applications in energy infrastructure" 
                 className="w-full h-auto rounded-xl shadow-xl"
               />

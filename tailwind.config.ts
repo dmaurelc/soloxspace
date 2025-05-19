@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -146,10 +147,10 @@ export default {
 				'slide-in-right': 'slide-in-right 0.5s ease-out'
 			},
 			backgroundImage: {
-				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
-				'earth-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
-				'space-pattern': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
-				'mars-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://soloxspace.com/wp-content/uploads/2022/09/Banner-photo-high-res.jpg')",
+				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/planets2.jpg')",
+				'earth-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/planets1.jpg')",
+				'space-pattern': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/planets2.jpg')",
+				'mars-pattern': "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/planets1.jpg')",
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
