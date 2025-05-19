@@ -134,7 +134,7 @@ const ContactSection = () => {
                 </a>
               </div>
 
-              <div className="flex items-center space-x-6 mb-8">
+              {/* <div className="flex items-center space-x-6 mb-8">
                 <a
                   href="https://twitter.com/SoloxSpace"
                   target="_blank"
@@ -153,7 +153,7 @@ const ContactSection = () => {
                 >
                   <Instagram size={24} />
                 </a>
-              </div>
+              </div> */}
             </div>
 
             <div>

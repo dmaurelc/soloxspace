@@ -40,7 +40,7 @@ const Footer = () => {
             <span className="text-white">Space</span>
           </div>
 
-          <div className="flex space-x-6 mb-12">
+          {/* <div className="flex space-x-6 mb-12">
             <a
               href="https://twitter.com/SoloxSpace"
               target="_blank"
@@ -68,7 +68,7 @@ const Footer = () => {
             >
               <Instagram size={20} />
             </a>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-8">
