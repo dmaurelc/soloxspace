@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { Droplet, CircleDot } from "lucide-react";
@@ -73,7 +72,7 @@ const SolutionSection = () => {
             <div className="pt-8">
               <a
                 href="#minerals"
-                className="solox-button"
+                className="solox-button hover:text-solox-white"
                 onClick={handleScrollToMinerals}
               >
                 LEARN ABOUT EARTH MINERALS
