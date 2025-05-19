@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				audiowide: ['Audiowide', 'cursive'],
 				inter: ['Inter', 'sans-serif'],
+				exo: ['Exo', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
