@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
-import { Mail, Twitter, Instagram, ArrowRight } from 'lucide-react';
+import { Mail, Twitter, Instagram, ArrowRight, Check } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useInView } from 'react-intersection-observer';
+import { toast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ const ContactSection = () => {
     email: '',
     message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -27,18 +28,55 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here would go the code to send the contact form data
-    console.log('Contact form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "43308279-7b3c-4767-a085-2cd10910605a",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          subject: "Nuevo mensaje desde Solox Space",
+          from_name: "Solox Space Website"
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        toast({
+          title: "Mensaje enviado",
+          description: "Gracias por contactarnos. Te responderemos pronto.",
+          variant: "default"
+        });
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        throw new Error(data.message || "Error al enviar el mensaje");
+      }
+    } catch (error) {
+      console.error("Error al enviar formulario:", error);
+      toast({
+        title: "Error",
+        description: "No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -87,6 +125,11 @@ const ContactSection = () => {
               <h3 className="text-2xl font-audiowide mb-6 text-solox-blue">Contact Form</h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
+                <input type="hidden" name="access_key" value="43308279-7b3c-4767-a085-2cd10910605a" />
+                <input type="hidden" name="subject" value="Nuevo mensaje desde Solox Space" />
+                <input type="hidden" name="from_name" value="Solox Space Website" />
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+                
                 <div>
                   <Input
                     type="text"
@@ -136,10 +179,19 @@ const ContactSection = () => {
                 <button 
                   type="submit" 
                   className="solox-button group w-full flex justify-center items-center"
-                  disabled={submitted}
+                  disabled={isSubmitting}
                 >
-                  {submitted ? 'MESSAGE SENT!' : 'SEND MESSAGE'}
-                  {!submitted && <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={16} />}
+                  {isSubmitting ? (
+                    'SENDING...'
+                  ) : submitted ? (
+                    <>
+                      MESSAGE SENT <Check className="ml-2" size={16} />
+                    </>
+                  ) : (
+                    <>
+                      SEND MESSAGE <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={16} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
