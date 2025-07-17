@@ -110,7 +110,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Diseñador Web Freelance"
-              className="text-solox-blue hover:text-solox-blue/80 text-xs font-inter transition-colors"
+              className="text-solox-blue hover:text-solox-blue/80 text-xs font-inter transition-colors hidden"
             >
               dmaurel.cl
             </a>
