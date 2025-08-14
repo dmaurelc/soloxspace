@@ -25,7 +25,7 @@ const TeamSection = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-solox-blue to-solox-darkblue rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <img
-                src="/images/camioneta.jpg"
+                src="/images/camioneta.webp"
                 alt="Constanza Vallejo Grove"
                 className="rounded-lg w-full h-auto object-cover relative"
               />

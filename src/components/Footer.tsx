@@ -16,7 +16,7 @@ const Footer = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/planets1.jpg"
+          src="/images/planets1.webp"
           alt="Space background with planets"
           className="w-full h-full object-cover opacity-30"
         />

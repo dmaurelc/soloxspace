@@ -52,7 +52,7 @@ const MineralsSection = () => {
           >
             <div className="relative h-60 overflow-hidden">
               <img
-                src="/images/p1.png"
+                src="/images/p1.webp"
                 alt="Copper"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
@@ -86,7 +86,7 @@ const MineralsSection = () => {
           >
             <div className="relative h-60 overflow-hidden">
               <img
-                src="/images/p2.jpg"
+                src="/images/p2.webp"
                 alt="Cobalt"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
@@ -120,7 +120,7 @@ const MineralsSection = () => {
           >
             <div className="relative h-60 overflow-hidden">
               <img
-                src="/images/molibdeno2.png"
+                src="/images/molibdeno2.webp"
                 alt="Molybdenum"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
@@ -197,7 +197,7 @@ const MineralsSection = () => {
           >
             <div className="w-full md:w-1/2">
               <img
-                src="/images/remo.png"
+                src="/images/remo.webp"
                 alt="Copper applications in renewable energy"
                 className="w-full h-auto rounded-xl shadow-xl"
               />
@@ -226,7 +226,7 @@ const MineralsSection = () => {
           >
             <div className="w-full md:w-1/2">
               <img
-                src="/images/carro.jpg"
+                src="/images/carro.webp"
                 alt="Cobalt applications in electric vehicles"
                 className="w-full h-auto rounded-xl shadow-xl"
               />
@@ -255,7 +255,7 @@ const MineralsSection = () => {
           >
             <div className="w-full md:w-1/2">
               <img
-                src="/images/molibdeno.png"
+                src="/images/molibdeno.webp"
                 alt="Molybdenum applications in energy infrastructure"
                 className="w-full h-auto rounded-xl shadow-xl"
               />

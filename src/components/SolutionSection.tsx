@@ -109,7 +109,7 @@ const SolutionSection = () => {
             <div className="relative rounded-lg overflow-hidden">
               <div className="absolute -inset-1 bg-gradient-to-r from-solox-blue to-solox-darkblue rounded-lg blur opacity-25"></div>
               <img
-                src="/images/water_ice_solox.jpg"
+                src="/images/water_ice_solox.webp"
                 alt="Water Ice on the Moon"
                 className="rounded-lg w-full h-auto object-cover relative shadow-2xl"
               />
